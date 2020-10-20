@@ -1,0 +1,17 @@
+---
+- hosts: test_servers
+  gather_facts: no
+  become_user: root
+  become_method: su
+  become: True
+  tasks:
+  - name: Add port 1521 to the firewall
+    firewalld:
+      port: 1521/tcp
+      permanent: yes
+      state: enabled
+
+  - name: Restart firewalld service
+    service:
+      name: firewalld
+      state: restarted

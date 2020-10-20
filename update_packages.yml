@@ -1,0 +1,9 @@
+---
+- hosts: test_servers
+  gather_facts: no
+  become_user: root
+  become_method: sudo
+  become: True
+  tasks:
+  - name: Update system software
+    shell: apt update --yes

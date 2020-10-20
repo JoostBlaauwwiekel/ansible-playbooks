@@ -1,0 +1,15 @@
+---
+- hosts: nlvora205
+  gather_facts: no
+  tasks:
+  - name: Get the current installed Python2 version
+    shell: python2 --version
+    register: version2
+    ignore_errors: yes
+  - debug: msg={{ version2 }}
+
+  - name: Get the current installed Python3 version
+    shell: python3 --version
+    register: version3
+    ignore_errors: yes
+  - debug: msg={{ version3 }}

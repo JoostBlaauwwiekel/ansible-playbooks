@@ -1,0 +1,7 @@
+---
+- hosts: test_servers
+  gather_facts: no
+  tasks:
+  - name: Get service facts of the host
+    service_facts:
+  - debug: msg={{ ansible_facts.services }}
