@@ -1,5 +1,5 @@
 ---
-- hosts: nlvora205
+- hosts: nlvora202
   gather_facts: no
   tasks:
   - name: Get the current installed Python2 version
