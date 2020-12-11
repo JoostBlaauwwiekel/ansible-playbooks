@@ -5,4 +5,4 @@
   - name: get system info of the host
     shell: uname -a
     register: data
-  - debug: msg={{ data.stdout_lines[0] }}
+  - debug: msg={{ data }}
